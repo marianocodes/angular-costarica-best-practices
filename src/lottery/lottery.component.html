@@ -1,0 +1,38 @@
+<h1>Lottery</h1>
+
+<button (click)="toggle = !toggle">ON / OFF</button>
+
+<br />
+
+<ng-container *ngIf="toggle">
+    
+  The winner number is: 
+  <ng-content></ng-content>
+
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ng-container [ngTemplateOutlet]="child"></ng-container> -->

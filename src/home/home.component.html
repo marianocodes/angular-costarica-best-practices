@@ -1,3 +1,15 @@
 <p>
 This is the home page
 </p>
+
+<div>
+  <label>Active Username</label>
+</div>
+
+<input #state type="text" />
+
+<button (click)="saveContact(state.value); state.value = ''">Save</button>
+
+<p *ngIf="!!sessionService.name">
+  Username: {{ sessionService.name }}
+</p>

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ContactsComponent } from './contacts.component';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
+import { ContactsService } from './contacts.service';
+import { SessionService } from '../app/session.service';
 
 @NgModule({
   imports: [
@@ -11,6 +13,10 @@ import { ContactsRoutingModule } from './contacts-routing.module';
     ContactsRoutingModule
   ],
   declarations: [ContactsComponent],
-  exports: [ContactsComponent]
+  exports: [ContactsComponent],
+  providers: [
+    ContactsService,
+    SessionService
+  ]
 })
 export class ContactsModule { }

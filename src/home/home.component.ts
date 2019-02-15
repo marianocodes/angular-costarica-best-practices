@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sessionService: SessionService) { }
 
-  ngOnInit() {
+  public saveContact(term: string): void {
+    this.sessionService.name = term;
   }
+
+  public ngOnInit() { }
 
 }

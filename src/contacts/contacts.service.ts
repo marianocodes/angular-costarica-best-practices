@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
-import { ContactsModule } from './contacts.module';
-
-@Injectable({
-  providedIn: ContactsModule
-})
+@Injectable()
 export class ContactsService {
 
   constructor() { }

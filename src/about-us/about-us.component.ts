@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sessionService: SessionService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from '../home/home.module';
 import { AboutUsModule } from '../about-us/about-us.module';
 
+import { APIsModule } from '../apis.module';
 
 @NgModule({
   imports:      [
@@ -15,8 +16,10 @@ import { AboutUsModule } from '../about-us/about-us.module';
     AppRoutingModule,
 
     HomeModule,
-    AboutUsModule
-    ],
+    AboutUsModule,
+
+    APIsModule.forRoot()
+  ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })

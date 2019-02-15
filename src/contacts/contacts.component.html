@@ -1,12 +1,9 @@
 <p>
-  Username: {{ sessionService.name }}
-</p>
-
-<p>
   Contacts page
 </p>
 
 <ul>
-  <li *ngFor="let contact of list$ | async"> {{ contact.name }}</li>
+  <li *ngFor="let contact of list; trackBy: trackById"> {{ contact.name }}</li>
 </ul>
 
+<button (click)="addNewContact()">Add new contact</button>

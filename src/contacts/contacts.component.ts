@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Contact } from './contacts.model';
 import { ContactsService } from './contacts.service';
-import { Observable } from 'rxjs';
-import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,12 +10,20 @@ import { SessionService } from '../session.service';
 })
 export class ContactsComponent implements OnInit {
 
-  public list$: Observable<Record<string, any>>;
+  public list: Contact[];
 
-  constructor(public contactsService: ContactsService, public sessionService: SessionService) {
-    this.list$ = contactsService.getList();
+  constructor(public contactService: ContactsService) { }
+
+  public ngOnInit() {
+    this.addNewContact();
   }
 
-  public ngOnInit() { }
+  public addNewContact() {
+    this.list = this.contactService.getContacts();
+  }
+
+  public trackById(_index, contact: Contact) {
+    return contact.id;
+  }
 
 }

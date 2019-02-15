@@ -2,8 +2,46 @@
   Contacts page
 </p>
 
+<button (click)="addNewContact()">Add new contact</button>
 <ul>
-  <li *ngFor="let contact of list; trackBy: trackById"> {{ contact.name }}</li>
+  <li *ngFor="let contact of list"> {{ contact.name }}</li>
 </ul>
 
-<button (click)="addNewContact()">Add new contact</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <cdk-virtual-scroll-viewport itemSize="20" class="viewport">
+  <li *cdkVirtualFor="let contact of list"> {{ contact.name }}</li>
+</cdk-virtual-scroll-viewport> -->

@@ -19,11 +19,7 @@ export class ContactsComponent implements OnInit {
   }
 
   public addNewContact() {
-    this.list = this.contactService.getContacts();
-  }
-
-  public trackById(_index, contact: Contact) {
-    return contact.id;
+    this.list = this.contactService.getContacts(500);
   }
 
 }

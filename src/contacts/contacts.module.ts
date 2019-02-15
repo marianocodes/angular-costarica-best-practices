@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 import { ContactsComponent } from './contacts.component';
 
@@ -13,7 +14,7 @@ import { SessionService } from '../session.service';
   imports: [
     CommonModule,
     ContactsRoutingModule,
-    HttpClientModule
+    ScrollingModule
   ],
   declarations: [ContactsComponent],
   exports: [ContactsComponent],

@@ -1,29 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { Contact } from './contacts.model';
-import { ContactsService } from './contacts.service';
+
+export const calculateFactorial = (value) => {
+  let result = 1;
+
+  for (let index =1 ; index <= value; index++) {
+    result = result * index;
+  }
+
+  return result;
+};
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  styleUrls: ['./contacts.component.css'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent {
 
+  @Input()
   public list: Contact[];
 
-  constructor(public contactService: ContactsService) { }
+  @Output()
+  public add = new EventEmitter();
 
-  public ngOnInit() {
-    this.addNewContact();
+  public txtinput: string;
+
+  constructor() { }
+
+  public addNewContact(event, name: string) {
+    if (event.keyCode === 13) {
+      this.add.emit(name);
+      this.txtinput = '';
+    }
   }
 
-  public addNewContact() {
-    this.list = this.contactService.getContacts();
+  public calcFac(num: number) {
+    console.log('Func: Calculating factorial');
+    return calculateFactorial(num);
   }
 
-  public trackById(_index, contact: Contact) {
-    return contact.id;
-  }
+ }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public print() {
+//   console.log('Hi!');
+// }

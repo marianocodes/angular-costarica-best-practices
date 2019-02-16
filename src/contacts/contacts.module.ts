@@ -1,25 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { ContactsComponent } from './contacts.component';
 
-import { ContactsRoutingModule } from './contacts-routing.module';
 import { ContactsService } from './contacts.service';
-import { SessionService } from '../session.service';
-
+import { FactorialPipe } from './factorial.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContactsRoutingModule,
-    HttpClientModule
+    FormsModule
   ],
-  declarations: [ContactsComponent],
+  declarations: [ContactsComponent, FactorialPipe],
   exports: [ContactsComponent],
   providers: [
-    ContactsService,
-    SessionService
+    ContactsService
   ]
 })
 export class ContactsModule { }
